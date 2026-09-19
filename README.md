@@ -11,7 +11,7 @@ Built in one day at **Monad Blitz Paris** · 19 September 2026
 [![Built with Foundry](https://img.shields.io/badge/Built%20with-Foundry-orange)](https://getfoundry.sh)
 [![Next.js](https://img.shields.io/badge/Frontend-Next.js-black)](https://nextjs.org)
 
-[Live Demo](#) · [Testnet Contract](#) · [Pitch Deck](#)
+[Live Demo](https://fairdrop-tawny.vercel.app/) · [Testnet Contract](https://testnet.monadvision.com/address/0x908858BcED4E90e7Cf11Ea388d5E4153769508e0) · [Demo Video](./demo.mp4)
 
 </div>
 
@@ -62,7 +62,7 @@ FairDrop leans directly on what makes Monad different, not just "a cheaper Ether
 | **My Collection** | See your items, resell them, or burn them to request physical delivery |
 | **My Wallet** | Balance, collection value, full activity history, withdraw accumulated funds |
 
-*(Screenshots to be added — see `/docs/screenshots`)*
+*(Real testnet screenshots — see `demo.mp4` for the full walkthrough; design references in `/docs/mockups`)*
 
 ## Tech Stack
 
@@ -91,7 +91,8 @@ anvil
 forge script script/Deploy.s.sol --rpc-url http://localhost:8545 --broadcast
 
 # Deploy to Monad Testnet
-forge script script/Deploy.s.sol --rpc-url $MONAD_TESTNET_RPC --broadcast --private-key $PRIVATE_KEY
+cast wallet import monad-deployer --interactive
+forge script script/Deploy.s.sol --rpc-url https://testnet-rpc.monad.xyz --broadcast --account monad-deployer
 
 # Frontend
 cd frontend
@@ -99,7 +100,7 @@ npm install
 npm run dev
 ```
 
-Set the deployed contract address in `frontend/lib/contract.ts` before running the frontend.
+The deployed contract address is already set in `frontend/lib/contract.ts`.
 
 ## The Opportunity
 
@@ -107,11 +108,13 @@ The global resale market for collectibles, tickets, and limited drops — TCG, s
 
 ## Team & Submission
 
-Built in 7 hours of active dev at Monad Blitz Paris.
+Built solo in 7 hours of active dev at Monad Blitz Paris.
 
 - **GitHub**: this repository (fork of `monad-developers/monad-blitz-paris`)
-- **Testnet contract**: _add address after deployment_
-- **Demo**: _add link or fallback video after recording_
+- **Testnet contract**: [`0x908858BcED4E90e7Cf11Ea388d5E4153769508e0`](https://testnet.monadvision.com/address/0x908858BcED4E90e7Cf11Ea388d5E4153769508e0) on Monad Testnet
+- **Live demo**: https://fairdrop-tawny.vercel.app/
+- **Demo video**: [`demo.mp4`](./demo.mp4) (repo root)
+- **Sample transactions**: [drop created](https://testnet.monadvision.com/tx/0x137cc3ac9caf886b4c68000327246f7dd69d9ce737b79995e6f7cb2ff9940569) · [primary buy](https://testnet.monadvision.com/tx/0x15aaa4737acec200e86ad8924de914b7045a8c10a96e400018a6b9d41822bd98) · [resale listing](https://testnet.monadvision.com/tx/0x759186d4f0269d255ce25619c05f0d8151779503e3192bc66d90364ca99f08c9) · [secondary buy](https://testnet.monadvision.com/tx/0x415936c13c83bb78839570c3c4f1cc84a062ba33ec43619f50f0ada45d7eddbe) · [withdraw](https://testnet.monadvision.com/tx/0x676e4a18fcc8c25a75364e00af9a8c7cee5082532c4f2f5230d17d97108a4d18)
 
 ---
 
