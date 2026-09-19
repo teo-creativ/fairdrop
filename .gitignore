@@ -1,0 +1,19 @@
+# Foundry
+contracts/out/
+contracts/cache/
+contracts/broadcast/
+contracts/lib/
+
+# Node / Next.js
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+
+# Env
+.env
+.env.local
+frontend/.env.local
+
+# OS / editor
+.DS_Store
+.vscode/
